@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  InfiniteDungeon:
+    image: itzg/minecraft-server
+    container_name: infinitedungeon
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      VERSION: 1.18
+      MEMORY: 8G
+      WORLD: https://www.dropbox.com/s/2nrdo4vdj3h0b0b/InfinityDungeons%20v1.1.1.1.1.18.zip
+      ENABLE_COMMAND_BLOCK: "TRUE"
+      SPAWN_PROTECTION: 0
+      DIFFICULTY: easy
+      GAMEMODE: 2
+      OP_PERMISSION_LEVEL: 4
+      OPS: loviflo
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./minecraft-data:/data
+    
